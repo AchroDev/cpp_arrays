@@ -13,7 +13,7 @@
 <h3 align="center"> C++ Arrays ~ AchroDev </h3>
 
   <p align="center">
-    Arrays in C++!.
+    Arrays in C++!
     <br />
   </p>
 </div>
