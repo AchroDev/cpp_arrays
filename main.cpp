@@ -25,9 +25,17 @@ int main()
     //     example[i] = 2;
     // }
 
-    int example[5];            // Created on the stack and will be automatically deleted from memory when we exit the scope
+    int example[5]; // Created on the stack and will be automatically deleted from memory when we exit the scope
+    for (int i = 0; i < 5; i++)
+    {
+        example[i] = 2;
+    }
     int *another = new int[5]; // Created on the heap and will need to be manually deleted from memory or when the program ends
-    delete[] another;          // Delete is handled here, since 'new' was called with the [], you must delete with them as well.
+    for (int i = 0; i < 5; i++)
+    {
+        another[i] = 2;
+    }
+    delete[] another; // Delete is handled here, since 'new' was called with the [], you must delete with them as
 
     std::cin.get();
 }
