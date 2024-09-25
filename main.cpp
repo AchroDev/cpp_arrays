@@ -2,6 +2,21 @@
 
 // Arrays are "a collection of a bunch of variables" usually of the same type
 
+class Entity
+{
+public:
+    int example[5];
+
+    // Constructor initializing the for loop
+    Entity()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            example[i] = 2;
+        }
+    }
+};
+
 int main()
 {
     // int example[5]; // Example array of 5 integers
@@ -25,17 +40,19 @@ int main()
     //     example[i] = 2;
     // }
 
-    int example[5]; // Created on the stack and will be automatically deleted from memory when we exit the scope
-    for (int i = 0; i < 5; i++)
-    {
-        example[i] = 2;
-    }
-    int *another = new int[5]; // Created on the heap and will need to be manually deleted from memory or when the program ends
-    for (int i = 0; i < 5; i++)
-    {
-        another[i] = 2;
-    }
-    delete[] another; // Delete is handled here, since 'new' was called with the [], you must delete with them as
+    // int example[5]; // Created on the stack and will be automatically deleted from memory when we exit the scope
+    // for (int i = 0; i < 5; i++)
+    // {
+    //     example[i] = 2;
+    // }
+    // int *another = new int[5]; // Created on the heap and will need to be manually deleted from memory or when the program ends
+    // for (int i = 0; i < 5; i++)
+    // {
+    //     another[i] = 2;
+    // }
+    // delete[] another; // Delete is handled here, since 'new' was called with the [], you must delete with them as
+
+    Entity e; // Instantiating 'e' as an Entity
 
     std::cin.get();
 }
