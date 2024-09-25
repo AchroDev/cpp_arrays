@@ -16,14 +16,18 @@ int main()
     // std::cout << example[4] << std::endl; // Prints the last index/element of the array
     // std::cout << example << std::endl;    // Prints the memory address of the array, 'example' here is actually just a pointer type
 
-    int example[5]; // An array is really just a pointer and in this case, an int pointer
+    // int example[5]; // An array is really just a pointer and in this case, an int pointer
 
-    // Example for loop that will interate through the array assigning the value 2 in memory
-    // Arrays do this in a row, and if you debug can look at the memory.bin you will see this row of 2's
-    for (int i = 0; i < 5; i++)
-    {
-        example[i] = 2;
-    }
+    // // Example for loop that will interate through the array assigning the value 2 in memory
+    // // Arrays do this in a row, and if you debug can look at the memory.bin you will see this row of 2's
+    // for (int i = 0; i < 5; i++)
+    // {
+    //     example[i] = 2;
+    // }
+
+    int example[5];            // Created on the stack and will be automatically deleted from memory when we exit the scope
+    int *another = new int[5]; // Created on the heap and will need to be manually deleted from memory or when the program ends
+    delete[] another;          // Delete is handled here, since 'new' was called with the [], you must delete with them as well.
 
     std::cin.get();
 }
