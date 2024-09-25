@@ -6,23 +6,23 @@ class Entity
 {
 public:
     // You can however set a constant to be able to track the size
-    const int size = 5; // This makes the size of the array known at compile time and can be tracked
-    int example[size];  // Currently this is an error as the int 'size' needs to be static.
+    static const int exampleSize = 5; // This const int makes the size of the array known at compile time and can be tracked
+    int example[exampleSize];         // Currently this is an error as the int 'size' needs to be static.
 
     // int *example = new int[5]; // If you create it on the heap here however, you will get in memory the pointer to the memory address for the values
-
-    // There isn't a surefire way to track the size of an array like we've written so far
 
     // Constructor initializing the for loop
     Entity()
     {
-        int a[5];                            // Creating an array on the stack
-        sizeof(a);                           // Getting the size of the array in bytes, NOT the actual size
-        int count = sizeof(a) / sizeof(int); // You can divide by the size of the data type, in this case 'int', this will give you the size of the array
-                                             // this only works on the stack, if you try to do it with data on the heap, you will get the size of an int* which is 4 bytes
-                                             // meaning your calculation would be wrong.
+        // There isn't a surefire way to track the size of an array like we've written so far
+        // int a[5];                            // Creating an array on the stack
+        // sizeof(a);                           // Getting the size of the array in bytes, NOT the actual size
+        // int count = sizeof(a) / sizeof(int); // You can divide by the size of the data type, in this case 'int', this will give you the size of the array
+        //                                      // this only works on the stack, if you try to do it with data on the heap, you will get the size of an int* which is 4 bytes
+        //                                      // meaning your calculation would be wrong.
 
-        for (int i = 0; i < 5; i++)
+        // Now using the 'exampleSize' instead of the number
+        for (int i = 0; i < exampleSize; i++)
         {
             example[i] = 2;
         }
