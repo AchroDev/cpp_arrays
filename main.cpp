@@ -1,4 +1,5 @@
 #include <iostream>
+#include <array>
 
 // Arrays are "a collection of a bunch of variables" usually of the same type
 
@@ -8,6 +9,9 @@ public:
     // You can however set a constant to be able to track the size
     static const int exampleSize = 5; // This const int makes the size of the array known at compile time and can be tracked
     int example[exampleSize];         // Currently this is an error as the int 'size' needs to be static.
+
+    // C++ 11 std array tracks the size and type as it is a requirement to be defined
+    std::array<int, 5> another;
 
     // int *example = new int[5]; // If you create it on the heap here however, you will get in memory the pointer to the memory address for the values
 
@@ -21,8 +25,8 @@ public:
         //                                      // this only works on the stack, if you try to do it with data on the heap, you will get the size of an int* which is 4 bytes
         //                                      // meaning your calculation would be wrong.
 
-        // Now using the 'exampleSize' instead of the number
-        for (int i = 0; i < exampleSize; i++)
+        // Now using the C++ 11 std array instead of the other
+        for (int i = 0; i < another.size(); i++)
         {
             example[i] = 2;
         }
