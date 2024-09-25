@@ -8,9 +8,17 @@ public:
     int example[5];
     // int *example = new int[5]; // If you create it on the heap here however, you will get in memory the pointer to the memory address for the values
 
+    // There isn't a surefire way to track the size of an array like we've written so far
+
     // Constructor initializing the for loop
     Entity()
     {
+        int a[5];                            // Creating an array on the stack
+        sizeof(a);                           // Getting the size of the array in bytes, NOT the actual size
+        int count = sizeof(a) / sizeof(int); // You can divide by the size of the data type, in this case 'int', this will give you the size of the array
+                                             // this only works on the stack, if you try to do it with data on the heap, you will get the size of an int* which is 4 bytes
+                                             // meaning your calculation would be wrong.
+
         for (int i = 0; i < 5; i++)
         {
             example[i] = 2;
