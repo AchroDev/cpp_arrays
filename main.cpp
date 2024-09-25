@@ -6,6 +6,7 @@ class Entity
 {
 public:
     int example[5];
+    // int *example = new int[5]; // If you create it on the heap here however, you will get in memory the pointer to the memory address for the values
 
     // Constructor initializing the for loop
     Entity()
