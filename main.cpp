@@ -5,7 +5,10 @@
 class Entity
 {
 public:
-    int example[5];
+    // You can however set a constant to be able to track the size
+    const int size = 5; // This makes the size of the array known at compile time and can be tracked
+    int example[size];  // Currently this is an error as the int 'size' needs to be static.
+
     // int *example = new int[5]; // If you create it on the heap here however, you will get in memory the pointer to the memory address for the values
 
     // There isn't a surefire way to track the size of an array like we've written so far
